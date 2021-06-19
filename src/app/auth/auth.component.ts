@@ -10,7 +10,7 @@ import {AppService} from '../app.service';
 })
 export class AuthComponent implements OnInit {
   public name = 'MirITeam';
-  public pas='nyzendoma';
+  public pas='iihuck';
   public rez:any;
   constructor(private router: Router, private servise: AppService) { }
 
@@ -21,7 +21,7 @@ export class AuthComponent implements OnInit {
   avt(name, pas){
     console.log(name);
     console.log(pas);
-    if (pas==='casein2021'&& name=='MirITeam'){
+    if (pas==='iihuck'&& name=='MirITeam'){
       window.localStorage.setItem('user', "true");
       this.router.navigate(['/']);
     }
