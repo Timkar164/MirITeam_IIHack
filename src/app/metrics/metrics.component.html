@@ -1,9 +1,17 @@
-<div class="form-group">
+<!--<div class="form-group">
   <label for="file">выбирете файл</label>
-  <input type="file"
+  <input type='file' formEncType='multipart/form-data'
          id="file"
          (change)="handleFileInput($event.target.files)">
+</div>-->
+<div>
+
+  <ng-container>
+    <input type="file" id="file" multiple (change)="getFileDetails($event)">
+    <button (click)="uploadFiles()">Upload</button>
+  </ng-container>
 </div>
+
 <div id="circularG"*ngIf="!isPlay">
   <div id="circularG_1" class="circularG"></div>
   <div id="circularG_2" class="circularG"></div>
