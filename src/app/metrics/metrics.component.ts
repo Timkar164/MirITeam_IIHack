@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MetricsComponent implements OnInit {
   public fileToUpload: File = null;
   public isFile = false;
-  public isPlay = false
+  public isPlay = false;
   constructor() { }
 
   ngOnInit() {

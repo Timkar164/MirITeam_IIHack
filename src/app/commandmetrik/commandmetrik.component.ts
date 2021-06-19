@@ -12,7 +12,7 @@ export class CommandmetrikComponent implements OnInit {
   // @ts-ignore
   @ViewChild(BaseChartDirective)
   public chart: BaseChartDirective;
-  public radarChartLabels = ['Петров Василий', 'Андрей Петришев', 'Бучаров Роман', 'Прохоров Матвей','Пластов Андрей'];
+  public radarChartLabels = ['Мининский', 'НГТУ им. Лобачевского', 'ВШЭ', 'ИТМО','НГТУ им.Р.Е. Алексеева'];
   public radarChartData = [
     {data: [0,0, 0, 0,0], label: 'Company team'}
 

@@ -15,7 +15,7 @@ export class YourmetrikComponent implements OnInit {
   @ViewChild(BaseChartDirective)
   public chart: BaseChartDirective;
   // PolarArea
-  public polarAreaChartLabels = ['Продуктивность', 'Вовлеченность в общение', 'Кол-во пряников', 'предложенные идеи', 'оринтация в офисе','качество работы','скорость работы'];
+  public polarAreaChartLabels = ['Анализ данных','Инженерия машинного обучения','Програмная инженерия','Вычислительные машины','Прикладная математика и информатика','Наука о данных','Анализ данных в биологии и медицине'];
   public polarAreaChartData = [0,0,0,0,0,0,0];
   public polarAreaLegend = true;
 
