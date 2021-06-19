@@ -1,5 +1,5 @@
 {
-  "name": "case-in",
+  "name": "iihuck",
   "version": "0.0.0",
   "engines": {
     "node": "10.16.3"
@@ -35,7 +35,6 @@
     "ng2-charts": "^1.6.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.4",
     "@angular/cli": "~8.3.4",
     "@angular/compiler-cli": "~8.2.5",
     "@angular/language-service": "~8.2.5",
@@ -53,6 +52,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "@angular-devkit/build-angular": "~0.803.4"
   }
 }
