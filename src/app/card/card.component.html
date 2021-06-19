@@ -1,0 +1,76 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="keywords" content=" ">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/media.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="icon" type="assets/image/x-icon" href="/assets//images/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+
+
+<p style="padding-left: 10px;
+padding-top: 3%;
+font-family: inherit;
+font-style: normal;
+font-weight: normal;
+color: black;
+font-size: x-large;
+line-height: 22px;"><b>Интерактивная экскурсия по лаборатории</b>
+  </p>
+
+<div class="map" style="z-index: 10">
+  <svg viewBox="0 0 1024 757">
+
+      <path class="part"  (click)="myprint(3)"d="m 599.12646,76.422482 1.93475,45.466538 -39.01738,0.64492 -0.96738,-18.38009 5.80424,
+-3.8695 -7.09407,-6.771608 12.57585,-11.286021 9.35128,8.383901 -0.32246,-13.865682 c 5.41156,-9.610536 11.46905,-6.94847 17.73517,-0.322458 z"
+            fill="#bf2523" description-data="<img src='assets/media/2.jpg'> <b>Сарбаев Руслан</b> <br> Должность: Бухгалтер <br> Телефон: 8(831) 152-89-95 <br> Почта: sarbaevr@rosatom.ru"></path>
+
+
+
+
+      <path class="part"  (click)="myprint(2)"d="m 352.96265,368.46747 h 207.94699 l 1.82409,212.50723 -208.85903,0.91205 z" fill="#bf2523" description-data="<img src='assets/media/1.jpg'>
+<b>Конференц зал</b> <br><br> Внутренний телефон: 11 <br><br> Вместимость: 15 чел. <br><br> Оборудование: Видеопроектор, экран, видеоконферецсвязь"></path>
+
+
+
+      <path class="part"  (click)="myprint(1)"d="m 887.19488,503.90663 5.01627,-11.62862 -4.78826,-6.38433 7.5244,-11.62862 42.18223,15.27681 6.38434,8.43644 -5.01627,12.08464 9.3485,5.47229 -1.14006,3.64819 6.38433,3.87621 -6.61235,13.68072 -6.84036,-2.96415 -1.82409,4.33222 -12.99669,-5.47228 -4.56024,10.26054 -8.20844,2.73614 -39.9021,-31.69367 6.38433,-10.26055 z" fill="#bf2523" description-data="<img src='assets/media/3.jpg'>
+<b>Кириенко Сергей</b> <br> <br> Должность: Генеральный директор <br><br> Телефон: 8(831) 189-89-89 <br> Почта: zverev@rosatom.ru <br>"></path>
+
+
+
+      <path class="part" (click)="myprint(0)" d="m 97.133133,174.20121 69.999697,-0.22802 -0.22801,133.38705 -69.771687,0.22801 z" fill="#bf2523" description-data="<img src='assets/media/4.jpg'>
+<b>Санузел</b> <br> Время уборки: <br>11:15-11:30; 17:45-16:00"></path>
+
+  </svg>
+
+
+
+  <img src="assets/media/office.jpg" alt="">
+</div>
+
+
+
+<div  [ngClass]="{'parent': t, 'parent1': !t}" (click)="t=!t">
+  <div class="block" >
+    <div [innerHTML]="text" style="margin: 10px 10px 10px 10px">
+
+
+    </div>
+
+
+  </div>
+</div>
+
+
+<script src="/assets/libs/html5shiv/es5-shim.min.js"></script>
+<script src="/assets/libs/html5shiv/html5shiv.min.js"></script>
+<script src="/assets/libs/html5shiv/html5shiv-printshiv.min.js"></script>
+<script src="/assets/libs/respond/respond.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>

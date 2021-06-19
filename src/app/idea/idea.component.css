@@ -1,0 +1,49 @@
+.myform{
+  background: #F4F4F4;
+  border: 1px solid #DADADA;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.mypresent{
+  background: #F4F4F4;
+  border: 1px solid #DADADA;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+}
+.mychart{
+  background: #FFFFFF;
+  border: 1px solid #DADADA;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+.mycontent{
+  background: #EBF6FC;
+  text-align: center;
+}
+.myp{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 22px;
+  /* or 171% */
+
+  text-align: center;
+  letter-spacing: -0.006em;
+
+  color: #000000;
+
+}

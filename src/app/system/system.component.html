@@ -1,0 +1,24 @@
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar" style="font-size: 20px">
+  <app-header></app-header>
+</nav>
+<div class="row content"  >
+  <div class="col-sm-3 sidenav" style="max-width: 380px ">
+    <app-leftmenu></app-leftmenu>
+  </div>
+  <div class="col-sm-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

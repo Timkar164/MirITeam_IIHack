@@ -1,0 +1,105 @@
+<p style="padding-left: 10px;
+font-style: normal;
+font-weight: normal;
+color: black;
+line-height: 22px;
+font-family: inherit;
+font-size: x-large;
+padding-top: 2%;"><b>Лавка идей</b></p>
+
+
+<div class="container" style="width: 100%">
+  <br>
+  <div class="row" style="width: 100%">
+    <div class="col-sm-4" style="width: 100%">
+
+      <div class="myform">
+        <form >
+          <div class="form-group">
+            <label for="usr">Название идеи:</label>
+            <input type="text" class="form-control" id="usr" (value)="inputt" (input)="inputt = $event.target.value">
+          </div>
+
+          <div class="checkbox">
+            <label><input type="checkbox" value="" >Хочу подать идею анонимно</label>
+          </div>
+
+
+          <div class="form-group">
+            <label for="comment">Описание:</label>
+            <textarea class="form-control" rows="5" id="comment"(value)="com" (input)="com = $event.target.value"></textarea>
+          </div>
+          <button (click)="add(inputt,com)">Предложить</button>
+        </form>
+      </div>
+      <div *ngFor="let items of ideas">
+      <div class="mypresent">
+
+
+
+
+
+
+
+        <div class="mychart">
+
+          <div class="container-fluid text-center" style="margin-top: 20px">
+            <div class="row content">
+              <div class="col-sm-2 sidenav">
+                <img src="{{items.img}}" alt="Avatar" class="avatar" style="width: 100%; border-radius: 75px; margin-bottom: 10px">
+              </div>
+              <div class="col-sm-8 text-left" style="font-size: 20px">
+
+                <p><span style="font-weight: bold">{{items.maker}}</span></p>
+                <p> Описание идеи:</p>
+                <p><span style="font-weight: bold">Идея:</span>{{items.name}} Цель: {{items.comment}}
+                  <br><span style="font-weight: bold">Еще...</span><br><span style="font-weight: bold">Поддержали</span></p>
+
+                <p ><br>
+
+                  <img src="{{img}}" alt="Фотография 1" width="40" height="40" style="border-radius: 20px; margin-left: 4px" *ngFor="let img of items.imgs">
+
+                  <img src="assets/images/3.png" alt="Фотография 4"  width="40" height="40" style="border-radius: 20px; margin-left: 4px; border: 3px solid black" (click)="addpod(items)">
+                </p>
+                <p><span style="font-weight: bold"> Хотят участвовать в реализации</span><br>
+                  <img src="{{rez1}}" alt="Фотография 3" width="40" height="40" style="border-radius: 20px; margin-left: 4px" *ngFor="let rez1 of items.rez">
+                  <img src="assets/images/3.png" alt="Фотография 4"  width="40" height="40" style="border-radius: 20px; margin-left: 4px; border: 3px solid black" (click)="addrez(items)">
+                </p>
+
+
+
+
+              </div>
+
+
+
+              <div class="col-sm-2 sidenav">
+
+                <p style="padding-left: 70px"><i class="fas fa-heart" style="font-size: 30px; color: red"></i></p>
+                <div class="col-sm-2 sidenav">
+                  <p>{{items.date}}</p>
+                </div>
+                <div class="col-sm-2 sidenav">
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+</div>
+</div>

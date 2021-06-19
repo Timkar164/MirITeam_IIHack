@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <!-- Page Title -->
+  <title>Dashmin - Multipurpose Bootstrap Dashboard Template</title>
+
+  <!-- Meta Data -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/img/favicon.png">
+
+  <!-- Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- ======= BEGIN GLOBAL MANDATORY STYLES ======= -->
+
+  <link rel="stylesheet" href="/assets/fonts/icofont/icofont.min.css">
+
+  <!-- ======= END BEGIN GLOBAL MANDATORY STYLES ======= -->
+
+  <!-- ======= MAIN STYLES ======= -->
+
+  <!-- ======= END MAIN STYLES ======= -->
+
+</head>
+
+<body>
+
+<!-- Offcanval Overlay -->
+<div class="offcanvas-overlay"></div>
+<!-- Offcanval Overlay -->
+
+<!-- Wrapper -->
+<div class="wrapper" style="margin-top: 10px; margin-right: 10px">
+  <!-- Header -->
+
+  <!-- End Header -->
+
+  <!-- Main Wrapper -->
+  <div class="main-wrapper">
+    <!-- Sidebar -->
+
+    <!-- End Sidebar -->
+
+    <!-- Main Content -->
+    <div class="main-content d-flex flex-column flex-md-row">
+      <div class="mb-4 mb-md-0">
+        <!-- Tasks Aside -->
+        <nav class="chat_aside">
+          <!-- Aside Header -->
+          <div class="aside-header">
+            <!-- Aside Header Top -->
+            <div class="aside-header-top">
+              <!-- Dropdown Button -->
+              <div class="dropdown-button">
+                <a href="#" class="d-flex align-items-center" data-toggle="dropdown">
+                  <div class="menu-icon style--three mr-0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a href="#">Daily</a>
+                  <a href="#">Sort By</a>
+                  <a href="#">Monthly</a>
+                </div>
+              </div>
+              <!-- End Dropdown Button -->
+
+              <!-- Profile -->
+              <div class="d-flex align-items-center profile" (click)="go_to_bot({'name':'Личный помошник Ботя','img':'assets/images/v1_921.png','id':200})">
+                <div class="avatar img-60 position-relative mr-3">
+                  <img src="assets/images/v1_921.png" alt="">
+                  <span class="avatar-status bg-teal c1-bg"></span>
+                </div>
+                <div class="content">
+                  <h4 class="name mb-1">Личный помошник Ботя</h4>
+                  <p class="font-14">сейчас в сети</p>
+                </div>
+              </div>
+              <!-- End Profile -->
+            </div>
+            <!-- End Aside Header Top -->
+
+            <!-- Aside Header Bottom -->
+            <div class="aside-header-bottom">
+              <ul class="nav nav-tabs" role="tablist">
+                <li>
+                  <a class="active" data-toggle="tab" href="#tab_messages">
+                    <img src="assets/img/svg/msg-icon.svg" alt="" class="svg">
+                  </a>
+                </li>
+                <li>
+                  <a data-toggle="tab" href="#tab_active_user">
+                    <img src="assets/img/svg/active-user.svg" alt="" class="svg">
+                  </a>
+                </li>
+                <li>
+                  <a data-toggle="tab" href="#tab_user">
+                    <img src="assets/img/svg/user.svg" alt="" class="svg">
+                  </a>
+                </li>
+                <li>
+                  <a data-toggle="tab" href="#tab_search" id="search-tab">
+                    <img src="assets/img/svg/search.svg" alt="" class="svg">
+                  </a>
+                  <div id="search-box">
+                    <input type="text" placeholder="Search">
+                    <div class="search-box-close">
+                      <img src="assets/img/svg/search-close.svg" alt="" class="svg">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- End Aside Header Bottom -->
+          </div>
+          <!-- End Aside Header -->
+
+          <!-- Aside Body -->
+          <div class="aside-body" data-trigger="scrollbar">
+            <div class="tab-content">
+              <div class="" style="display: block" id="tab_messages" *ngFor="let mes of chats">
+                <!-- Message -->
+                <a  class="message media align-items-center" (click)="changedialog(mes)">
+                  <div class="figure">
+                    <img src="{{mes.img}}" alt="" width="50px">
+                    <span class="avatar-status bg-teal"></span>
+                  </div>
+                  <div class="content media-body">
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                      <h4 class="name">{{mes.name}}<span class="ml-2 c3"></span></h4>
+                      <p class="time bold">8:35am</p>
+                    </div>
+                    <p class="main-text">{{mes.last}}</p>
+                  </div>
+                </a>
+                <!-- End Message -->
+
+
+
+                <!-- End Message -->
+              </div>
+            </div>
+          </div>
+          <!-- End Aside Body -->
+        </nav>
+        <!-- End Tasks Aside -->
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- Card -->
+            <div class="card">
+              <!-- Mail Header -->
+              <div class="chat-header d-flex align-items-center justify-content-between media border-bottom">
+                <div class="chat-header-left mb-3 mb-md-0">
+                  <!-- Profile -->
+                  <div class="d-flex align-items-center profile">
+                    <div class="avatar position-relative mr-3">
+                      <img src="{{mainperson.img}}" class="img-50" alt="">
+                      <span class="avatar-status bg-teal"></span>
+                    </div>
+                    <div class="content">
+                      <h4 class="name mb-1">{{mainperson.name}}</h4>
+                      <p class="font-14">Сейчас в сети</p>
+                    </div>
+                  </div>
+                  <!-- End Profile -->
+                </div>
+
+                <div class="chat-header-right d-flex align-items-center">
+                  <!-- Video Call -->
+                  <div class="video-call mr-20">
+                    <a href="#"><img src="assets/img/svg/video-call.svg" alt="" class="svg"></a>
+                  </div>
+                  <!-- End Video Call -->
+
+                  <!-- Video Call -->
+                  <div class="audio-call mr-1">
+                    <a href="#"><img src="assets/img/svg/audio-call.svg" alt="" class="svg"></a>
+                  </div>
+                  <!-- End Video Call -->
+
+                  <!-- Dropdown Button -->
+                  <div class="dropdown-button m-0">
+                    <a href="#" class="d-flex align-items-center" data-toggle="dropdown">
+                      <div class="menu-icon style--two justify-content-center mr-0">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a href="#">Daily</a>
+                      <a href="#">Sort By</a>
+                      <a href="#">Monthly</a>
+                    </div>
+                  </div>
+                  <!-- End Dropdown Button -->
+                </div>
+              </div>
+              <!-- End Mail Header -->
+
+              <!-- Chat Body -->
+              <div class="chat-body pb-0" data-trigger="scrollbar" style="height: auto">
+                <!-- Chat Messages -->
+                <div class="chat-messages d-flex flex-column justify-content-end" >
+                  <!-- Message Item -->
+                  <div *ngFor="let item of maindialog">
+                  <div class="message-item friend" *ngIf="item.receiver==mainuser.id">
+                    <div class="avatar mr-20">
+                      <img src="{{mainperson.img}}" class="img-50" alt="avatar">
+                      <span class="avatar-status bg-teal"></span>
+                    </div>
+                    <div class="content">
+                      <div class="bubble">
+                        <p>{{item.text}}</p>
+                      </div>
+
+                      <h6 class="font-12 c4 mt-n1">
+                        <span>{{item.time}}</span>
+                      </h6>
+                    </div>
+                  </div>
+                  <!-- End Message Item -->
+
+                  <!-- Message Item -->
+                  <div class="message-item me" *ngIf="item.sender==mainuser.id">
+                    <div class="avatar mr-20">
+                      <img src="{{mainuser.img}}" class="img-50" alt="avatar">
+                      <span class="avatar-status bg-teal"></span>
+                    </div>
+                    <div class="content">
+                      <div class="bubble">
+                        <p>{{item.text}}</p>
+                      </div>
+                      <h6 class="font-12 c4 mt-n1">
+                        <span>{{item.time}}</span>
+                      </h6>
+                    </div>
+                  </div>
+                  <!-- End Message Item -->
+                  </div>
+
+                  <!-- End Message Item -->
+                </div>
+                <!-- End Chat Messages -->
+              </div>
+              <!-- End  Chat Body -->
+
+              <!-- Chat Footer -->
+              <div class="chat-footer d-flex align-items-end pt-1" style="margin-top: 10px">
+                <!-- Voice Msg -->
+                <div class="voice-msg mr-20">
+                  <a href="#"><img src="assets/img/svg/voice-msg.svg" alt="" class="svg"></a>
+                </div>
+                <!-- End Voice Msg -->
+
+                <!-- Attach File -->
+                <div class="attach-file mr-20">
+                  <a href="#"><img src="assets/img/svg/attach.svg" alt="" class="svg"></a>
+                  <input class="file-input" type="file" id="fileUpload" multiple="">
+                </div>
+                <!-- End Attach File -->
+
+                <!-- Form -->
+                <form action="#" method="GET" class="flex-grow mr-20 radius-10">
+
+                  <input type="text" class="theme-input-style" (value)="inputt" (input)="inputt = $event.target.value">
+                  <!--<textarea name="chat_msg" class="theme-input-style style--three" (change)="sendmes(input)">{{input}}</textarea>-->
+                </form>
+                <!-- End Form -->
+
+                <div class="d-flex align-items-center">
+                  <!-- Submit -->
+                  <div class="submit mr-20">
+                    <img src="assets/img/svg/send.svg" alt="" class="svg" (click)="sendmes(inputt)">
+                  </div>
+                  <!-- End Submit -->
+
+                  <!-- Dropdown Button -->
+                  <div class="dropdown-button">
+                    <a href="#" class="d-flex align-items-center" data-toggle="dropdown">
+                      <div class="menu-icon style--three mr-0">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a href="#">Daily</a>
+                      <a href="#">Sort By</a>
+                      <a href="#">Monthly</a>
+                    </div>
+                  </div>
+                  <!-- End Dropdown Button -->
+                </div>
+              </div>
+              <!-- End Chat Footer -->
+            </div>
+            <!-- End Card -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Main Content -->
+  </div>
+  <!-- End Main Wrapper -->
+<div style="width: 100%; background-color: #f1f1f1; height: 50px"></div>
+
+</div>
+<!-- End wrapper -->
+
+<!-- ======= BEGIN GLOBAL MANDATORY SCRIPTS ======= -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="assets/js/script.js"></script>
+<!-- ======= BEGIN GLOBAL MANDATORY SCRIPTS ======= -->
+</body>
+
+</html>

@@ -1,0 +1,420 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+
+
+<p style="padding-left: 3%;
+padding-top: 2%;
+font-family: inherit;
+font-style: normal;
+font-weight: normal;
+color: #84919A;
+font-size: medium;
+line-height: 16px;">Учебная комната > Мои курсы</p>
+
+
+<p style="padding-left: 3%;font-family: inherit;
+font-style: normal;
+font-weight: normal;
+color: black;
+font-size: x-large;
+line-height: 22px;"><b>Учебная комната</b></p>
+
+<div class="wrapper" style="weight: 70%">
+<div class="left_block" style="float:left; weight: 40%; padding-left: 3%; padding-right: 7%">
+<p action="" method="post" class="search">
+	<input type="search" name="" placeholder="Search" class="input" />
+</p>
+</div>
+
+<div class="right_block" style="padding-left: 15%">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" (click)="changetype(1)">Мои курсы</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="changetype(2)">Рекомендации</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="changetype(3)">Все курсы</a>
+  </li>
+</ul>
+</div>
+</div>
+
+<div class="container" style="width: 100%">
+  <br>
+  <div class="row" style="max-width: 100%; margin-left: 0px; margin-right: 0px" *ngIf="type==1">
+    <div class="col-sm-4" >
+      <div class="mycontent" >
+      <p class="namerow" style="font-family: inherit; font-size: large;"> To Do</p>
+
+        <div *ngFor="let i of mytodo" style="padding-top: 10px">
+          <div class="mycourse" *ngIf="i.type==1">
+
+           <!--- START STEPIK CARD -->
+
+
+          <ul id="ember297" class="catalog-course-cards__cards course-cards ember-view">    <li class="course-cards__item">
+            <div id="ember299" class="course-cards__card course-card catalog-rich-card ember-view">    <a class="catalog-rich-card__link-wrapper" href="https://stepik.org/course/91156" aria-label="Deep Learning (семестр 1, весна 2021): базовый поток" draggable="false"></a>
+
+              <a class="course-card__title" href="">
+                {{i.name}}
+              </a>
+
+              <span class="course-card__authors">
+      <a class="course-card__author" href="">{{i.description}}</a>
+  </span>
+
+              <img class="course-card__cover" alt="Course cover" src="{{i.img}}">
+
+              <!---->
+
+              <div class="course-card__widgets">
+          <span class="course-card__widget" data-type="rating" aria-label="Rating of this course is 4.8 out of 5">
+              <span id="ember713" class="svg-icon star2_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#star2"></use>
+  </svg></span>
+              <span>4.8</span>
+          </span>
+
+                <span class="course-card__widget" data-type="learners" aria-label="There are 5.2K learners in the course">
+            <span id="ember714" class="svg-icon user_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#user"></use>
+  </svg></span>
+            <span>5.2K</span>
+          </span>
+
+                <span class="course-card__widget" data-type="workload" aria-label="Course workload is 14 ч">
+            <span id="ember715" class="svg-icon clock_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#clock"></use>
+  </svg></span>
+            <span>14 ч</span>
+          </span>
+
+                <!---->
+                <!---->  </div>
+
+              <span class="course-card__price">
+      <span class="format-price format-price_free">Бесплатно</span>
+  </span>
+
+              <div class="course-card__badges">
+                <span id="ember716" class="course-tariff-badge ember-view"><!----></span>
+
+              </div>
+            </div>
+          </li>
+          </ul>
+
+          <!--- END STEPIK CARD -->
+
+
+
+        </div>
+        </div>
+
+
+    </div>
+    </div>
+    <div class="col-sm-4" >
+      <div class="mycontent">
+      <p class="namerow" style="font-family: inherit; font-size: large;"> In progress</p>
+
+
+        <div *ngFor="let i of mytodo" style="padding-top: 10px">
+          <div class="mycourse" *ngIf="i.type==2">
+
+
+            <!--- START STEPIK CARD -->
+
+
+            <ul id="ember297" class="catalog-course-cards__cards course-cards ember-view">    <li class="course-cards__item">
+              <div id="ember299" class="course-cards__card course-card catalog-rich-card ember-view">    <a class="catalog-rich-card__link-wrapper" href="#" aria-label="Deep Learning (семестр 1, весна 2021): базовый поток" draggable="false"></a>
+
+                <a class="course-card__title" href="#">
+                  {{i.name}}
+                </a>
+
+                <span class="course-card__authors">
+      <a class="course-card__author" href="">{{i.description}}</a>
+  </span>
+
+                <img class="course-card__cover" alt="Course cover" src="{{i.img}}">
+
+                <!---->
+
+                <div class="course-card__widgets">
+          <span class="course-card__widget" data-type="rating" aria-label="Rating of this course is 4.8 out of 5">
+              <span id="ember713" class="svg-icon star2_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#star2"></use>
+  </svg></span>
+              <span>4.8</span>
+          </span>
+
+                  <span class="course-card__widget" data-type="learners" aria-label="There are 5.2K learners in the course">
+            <span id="ember714" class="svg-icon user_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#user"></use>
+  </svg></span>
+            <span>5.2K</span>
+          </span>
+
+                  <span class="course-card__widget" data-type="workload" aria-label="Course workload is 14 ч">
+            <span id="ember715" class="svg-icon clock_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#clock"></use>
+  </svg></span>
+            <span>14 ч</span>
+          </span>
+
+                  <!---->
+                  <!---->  </div>
+
+                <span class="course-card__price">
+      <span class="format-price format-price_free">Бесплатно</span>
+  </span>
+
+                <div class="course-card__badges">
+                  <span id="ember716" class="course-tariff-badge ember-view"><!----></span>
+
+                </div>
+              </div>
+            </li>
+            </ul>
+
+            <!--- END STEPIK CARD -->
+
+
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-sm-4"  >
+      <div class="mycontent">
+      <p class="namerow" style="font-family: inherit; font-size: large;"> Done</p>
+
+        <div *ngFor="let i of mytodo" style="padding-top: 10px">
+          <div class="mycourse" *ngIf="i.type==3">
+
+            <!--- START STEPIK CARD -->
+
+
+            <ul id="ember297" class="catalog-course-cards__cards course-cards ember-view">    <li class="course-cards__item">
+              <div id="ember299" class="course-cards__card course-card catalog-rich-card ember-view">    <a class="catalog-rich-card__link-wrapper" href="https://stepik.org/course/91156" aria-label="Deep Learning (семестр 1, весна 2021): базовый поток" draggable="false"></a>
+
+                <a class="course-card__title" href="">
+                  {{i.name}}
+                </a>
+
+                <span class="course-card__authors">
+      <a class="course-card__author" href="">{{i.description}}</a>
+  </span>
+
+                <img class="course-card__cover" alt="Course cover" src="{{i.img}}">
+
+                <!---->
+
+                <div class="course-card__widgets">
+          <span class="course-card__widget" data-type="rating" aria-label="Rating of this course is 4.8 out of 5">
+              <span id="ember713" class="svg-icon star2_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#star2"></use>
+  </svg></span>
+              <span>4.8</span>
+          </span>
+
+                  <span class="course-card__widget" data-type="learners" aria-label="There are 5.2K learners in the course">
+            <span id="ember714" class="svg-icon user_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#user"></use>
+  </svg></span>
+            <span>5.2K</span>
+          </span>
+
+                  <span class="course-card__widget" data-type="workload" aria-label="Course workload is 14 ч">
+            <span id="ember715" class="svg-icon clock_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#clock"></use>
+  </svg></span>
+            <span>14 ч</span>
+          </span>
+
+                  <!---->
+                  <!---->  </div>
+
+                <span class="course-card__price">
+      <span class="format-price format-price_free">Бесплатно</span>
+  </span>
+
+                <div class="course-card__badges">
+                  <span id="ember716" class="course-tariff-badge ember-view"><!----></span>
+
+                </div>
+              </div>
+            </li>
+            </ul>
+
+            <!--- END STEPIK CARD -->
+
+
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="width: 100%">
+  <div class="row" style="max-width: 100%; margin-left: 0px; margin-right: 0px" *ngIf="type==2">
+    <div class="mycontent">
+      <p class="namerow" style="font-family: inherit; font-size: large;"> Рекомендации для Ввас</p>
+
+      <div *ngFor="let i of recom" style="padding-top: 10px">
+        <div class="mycourse"  style="padding-left: 10px;padding-right: 10px;padding-top: 10px">
+
+          <!--- START STEPIK CARD -->
+
+
+          <ul id="ember297" class="catalog-course-cards__cards course-cards ember-view">    <li class="course-cards__item">
+            <div id="ember299" class="course-cards__card course-card catalog-rich-card ember-view">    <a class="catalog-rich-card__link-wrapper" href="https://stepik.org/course/91156" aria-label="Deep Learning (семестр 1, весна 2021): базовый поток" draggable="false"></a>
+
+              <a class="course-card__title" href="">
+                {{i.name}}
+              </a>
+
+              <span class="course-card__authors">
+      <a class="course-card__author" href="">{{i.description}}</a>
+  </span>
+
+              <img class="course-card__cover" alt="Course cover" src="{{i.img}}">
+
+              <!---->
+
+              <div class="course-card__widgets">
+          <span class="course-card__widget" data-type="rating" aria-label="Rating of this course is 4.8 out of 5">
+              <span id="ember713" class="svg-icon star2_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#star2"></use>
+  </svg></span>
+              <span>4.8</span>
+          </span>
+
+                <span class="course-card__widget" data-type="learners" aria-label="There are 5.2K learners in the course">
+            <span id="ember714" class="svg-icon user_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#user"></use>
+  </svg></span>
+            <span>5.2K</span>
+          </span>
+
+                <span class="course-card__widget" data-type="workload" aria-label="Course workload is 14 ч">
+            <span id="ember715" class="svg-icon clock_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#clock"></use>
+  </svg></span>
+            <span>14 ч</span>
+          </span>
+
+                <!---->
+                <!---->  </div>
+
+              <span class="course-card__price">
+      <span class="format-price format-price_free">Бесплатно</span>
+  </span>
+
+              <div class="course-card__badges">
+                <span id="ember716" class="course-tariff-badge ember-view"><!----></span>
+
+              </div>
+            </div>
+          </li>
+          </ul>
+
+          <!--- END STEPIK CARD -->
+
+
+
+        </div>
+      </div>
+
+
+
+    </div>
+</div>
+</div>
+
+
+<div class="container" style="width: 100%">
+  <div class="row" style="max-width: 100%; margin-left: 0px; margin-right: 0px" *ngIf="type==3">
+    <div class="mycontent">
+      <p class="namerow" style="font-family: inherit; font-size: large;"> Все курсы</p>
+
+      <div *ngFor="let i of all" style="padding-top: 10px">
+        <div class="mycourse"  style="padding-left: 10px;padding-right: 10px;padding-top: 10px">
+
+          <!--- START STEPIK CARD -->
+
+
+          <ul id="ember297" class="catalog-course-cards__cards course-cards ember-view">    <li class="course-cards__item">
+            <div id="ember299" class="course-cards__card course-card catalog-rich-card ember-view">    <a class="catalog-rich-card__link-wrapper" href="https://stepik.org/course/91156" aria-label="Deep Learning (семестр 1, весна 2021): базовый поток" draggable="false"></a>
+
+              <a class="course-card__title" href="">
+                {{i.name}}
+              </a>
+
+              <span class="course-card__authors">
+      <a class="course-card__author" href="">{{i.description}}</a>
+  </span>
+
+              <img class="course-card__cover" alt="Course cover" src="{{i.img}}">
+
+              <!---->
+
+              <div class="course-card__widgets">
+          <span class="course-card__widget" data-type="rating" aria-label="Rating of this course is 4.8 out of 5">
+              <span id="ember713" class="svg-icon star2_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#star2"></use>
+  </svg></span>
+              <span>4.8</span>
+          </span>
+
+                <span class="course-card__widget" data-type="learners" aria-label="There are 5.2K learners in the course">
+            <span id="ember714" class="svg-icon user_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#user"></use>
+  </svg></span>
+            <span>5.2K</span>
+          </span>
+
+                <span class="course-card__widget" data-type="workload" aria-label="Course workload is 14 ч">
+            <span id="ember715" class="svg-icon clock_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1615816821#clock"></use>
+  </svg></span>
+            <span>14 ч</span>
+          </span>
+
+                <!---->
+                <!---->  </div>
+
+              <span class="course-card__price">
+      <span class="format-price format-price_free">Бесплатно</span>
+  </span>
+
+              <div class="course-card__badges">
+                <span id="ember716" class="course-tariff-badge ember-view"><!----></span>
+
+              </div>
+            </div>
+          </li>
+          </ul>
+
+          <!--- END STEPIK CARD -->
+
+
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

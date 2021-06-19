@@ -1,0 +1,32 @@
+<div class="form-group">
+  <label for="file">выбирете файл</label>
+  <input type="file"
+         id="file"
+         (change)="handleFileInput($event.target.files)">
+</div>
+<div id="circularG"*ngIf="!isPlay">
+  <div id="circularG_1" class="circularG"></div>
+  <div id="circularG_2" class="circularG"></div>
+  <div id="circularG_3" class="circularG"></div>
+  <div id="circularG_4" class="circularG"></div>
+  <div id="circularG_5" class="circularG"></div>
+  <div id="circularG_6" class="circularG"></div>
+  <div id="circularG_7" class="circularG"></div>
+  <div id="circularG_8" class="circularG"></div>
+</div>
+<div  class="container">
+  <ul class="nav nav-tabs">
+
+    <li class="nav-item">
+      <a class="nav-link" href="metriks/cmetrik">Оценка соответствия РПД</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="metriks/ymetrik">Оценка соответствия образовательной програмы</a>
+    </li>
+  </ul>
+
+  <div *ngIf="isFile">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

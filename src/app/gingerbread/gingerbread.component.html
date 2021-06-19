@@ -1,0 +1,161 @@
+<p style="padding-left: 10px;font-family: Inter;
+font-style: normal;
+font-weight: normal;
+color: black;
+font-size: 26px;
+line-height: 22px;">Лавка достижений</p>
+
+
+<div class="container" style="width: 100%">
+  <br>
+  <div class="row" style="width: 100%">
+    <div class="col-sm-4" style="width: 80%">
+
+      <div class="myform">
+      <form >
+        <div class="input-group">
+          <span class="input-group-addon">Кого?</span>
+          <input id="msg" type="text" class="form-control" name="msg" placeholder="Search chat" style="size: 50px" (value)="inputt" (input)="inputt = $event.target.value">
+        </div>
+
+        <div class="form-group">
+          <label for="sel1">какое достижение?:</label>
+          <select class="form-control" id="sel1" (value)="a1" (input)="a1 = $event.target.value">
+            <option>статья в журнале</option>
+            <option>участие в хакатоне</option>
+            <option>грантовый конкурс</option>
+            <option>менторство</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Комментарий:</label>
+          <textarea class="form-control" rows="5" id="comment" (value)="comment" (input)="comment = $event.target.value"></textarea>
+        </div>
+        <button (click)="mypresent(inputt,a1,comment)">опубликовать</button>
+      </form>
+      </div>
+
+       <div class="mypresent">
+
+      <div  *ngFor="let items of mascard">
+      <div class="mychart">
+
+        <div class="container-fluid text-center" style="margin-top: 20px">
+          <div class="row content">
+            <div class="col-sm-2 sidenav">
+              <img src="{{items.img}}" alt="Avatar" class="avatar" width="80px" height="80px" style=" border-radius: 75px; margin-bottom: 10px">
+            </div>
+            <div class="col-sm-8 text-left" style="font-size: 20px">
+
+              <p><span style="font-weight: bold">{{items.maker}}</span> достиг(ла)  {{retype(items.type)}}</p>
+               <p> {{items.comment}}</p>
+
+            </div>
+            <div class="col-sm-2 sidenav">
+
+              <p style="padding-left: 70px"><i class="fas fa-heart" style="font-size: 30px; color: red"></i></p>
+              <div class="col-sm-2 sidenav">
+                    <p>{{items.date}}</p>
+              </div>
+              <div class="col-sm-2 sidenav">
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="input-group" style="margin-left: 250px; padding-bottom: 20px; padding-right: 20px">
+          <span class="input-group-addon">Кого?</span>
+          <input id="msg" type="text" class="form-control" name="msg" placeholder="Search chat" style="size: 50px">
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+       </div>
+
+
+
+       </div>
+
+    </div>
+    <div class="col-sm-4" style="width: 20%">
+
+      <div class="mychart">
+
+        <div class="container-fluid text-center" style="margin-top: 20px">
+          <div class="row content">
+            <div class="col-sm-8 text-left" style="font-size: 14px; margin-left: px">
+              <h1 style="font-size: 20px">{{mainuser.name}}</h1>
+
+
+
+            </div>
+            <div class="col-sm-2 sidenav">
+              <img src="{{mainuser.img}}" alt="Avatar" class="avatar"  width="50px" height="50px" style="width: 50px; border-radius: 25px">
+            </div>
+
+            </div>
+
+          </div>
+
+
+        <div class="container-fluid text-center" style="margin-top: 20px">
+          <div class="row content">
+            <div class="col-sm-2 sidenav" style="width: 50%">
+              <p align="right"><img src="assets/images/v14_249.png" alt="Avatar" class="avatar" style="width: 80%; border-radius: 25px;  margin-right: 1px"></p>
+            </div>
+
+            <div class="col-sm-8 text-left" style="font-size: 14px; margin-left: px; width: 50%">
+
+              <p style="font-size: 16px"><span style="color: forestgreen">3 место</span> в Лиге новичков</p>
+
+
+            </div>
+
+
+          </div>
+          <p> Мои награды <br> Рейтинг</p>
+        </div>
+
+
+        </div>
+
+
+
+
+
+      <div class="mycontent">
+
+
+
+
+
+      </div>
+
+
+      <div class="mycontent">
+
+
+        <div class="rigtchat" style="margin-top: 10px">
+
+          <p class="myp" style="padding-top: 15px">Бонусы и призы <br>в лавке достижений</p>
+          <hr>
+
+          <p class="myp" style="padding-bottom: 15px">Как получить больше <br> баллов в рейтиге?</p>
+        </div>
+
+
+
+
+    </div>
+
+  </div>
+  </div>
+</div>

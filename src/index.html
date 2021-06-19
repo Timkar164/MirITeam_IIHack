@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nuzen doma</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3a7a39d1-2c17-4d64-91ab-fda8b6e7379a" type="text/javascript"></script>
+
+
+  <script>
+      ymaps.ready(function () {
+          var myMap = new ymaps.Map('map', {
+                  center: [51.542, 46.027],
+                  zoom: 12
+              }, {
+                  searchControlProvider: 'yandex#search'
+              }),
+
+              // Создаём макет содержимого.
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                  '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+              ),
+
+
+
+              myPlacemark6 = new ymaps.Placemark([51.5380720723755,46.009669500000015], {
+                  hintContent: 'Собственный значок метки',
+                  balloonContent: 'г. Саратов, ул. Астраханская, 83, корпус 5, ком. 47  <br> <a href="https://www.sgu.ru/structure/biological">Биологический факультет</a>'
+              }, {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'assets/atom.png',
+                  // Размеры метки.
+                  iconImageSize: [30, 42],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-5, -38]
+              }),
+
+              myPlacemark7 = new ymaps.Placemark([51.53885607237754,46.01019949999995], {
+                  hintContent: 'Собственный значок метки',
+                  balloonContent: 'г. Саратов, ул. Астраханская, 83 <br> <a href="https://www.sgu.ru/structure/physicsinstitute">Институт физики</a>'
+              }, {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'assets/atom.png',
+                  // Размеры метки.
+                  iconImageSize: [30, 42],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-5, -38]
+              }),
+
+              myPlacemark8 = new ymaps.Placemark([51.53658757239991,46.00695649999992], {
+                  hintContent: 'Собственный значок метки',
+                  balloonContent:'г. Саратов, ул. Железнодорожная 72/74  <br> <a href="https://www.sgu.ru/structure/ido">Институт довузовского образования</a>'
+              }, {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'assets/atom.png',
+                  // Размеры метки.
+                  iconImageSize: [30, 42],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-5, -38]
+              }),
+
+              myPlacemark9 = new ymaps.Placemark([51.52342607239435,46.0213655], {
+                  hintContent: 'Собственный значок метки',
+                  balloonContent: 'г. Саратов, ул. Заулошнова А.Н., 5, корпус № 17  <br> <a href="https://www.sgu.ru/structure/instisk">Институт искусств</a>'
+              }, {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'assets/atom.png',
+                  // Размеры метки.
+                  iconImageSize: [30, 42],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-5, -38]
+              });
+
+
+          myMap.geoObjects
+
+              .add(myPlacemark6)
+              .add(myPlacemark7)
+              .add(myPlacemark8)
+              .add(myPlacemark9);
+      });
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<body>
+<div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="mb-3 card">
+        <div class="p-0 border-0 bg-dark rounded-top card-body" style="background-image: url(assets/images/unsplash/4.jpg); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
+          <div class="d-flex justify-content-between align-items-center p-3">
+            <div class="d-flex align-items-center">
+              <a href="#" class="widget-icon-xlg">
+                <app-avatar src="{{mainuser.img}}" size="64" name="avatar"></app-avatar>
+              </a>
+              <div class="d-inline-block px-3">
+                <h5 class="my-0 text-light">
+                  <p class="fw-400" style="font-size: large;">{{mainuser.name}}</p>
+                </h5>
+                <small class="text-light m-r" style="font-size: medium;"></small>
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+              <button class="btn btn-light" style="border-radius: 20px;">Поделиться</button>
+            </div>
+          </div>
+        </div>
+        <div class="p-2">
+          <ul class="nav" id="socialTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link" [ngClass]="{'text-primary': tab === 'activity'}" role="tab" aria-controls="activity" aria-selected="false" (click)="tab='activity'" style="font-size: medium;">Активности</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [ngClass]="{'text-primary': tab === 'about'}" role="tab" aria-controls="about" aria-selected="false" (click)="tab='about'" style="font-size: medium;">Обо мне</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [ngClass]="{'text-primary': tab === 'friends'}" role="tab" aria-controls="friends" aria-selected="false" (click)="tab='friends'" style="font-size: medium;">Друзья</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [ngClass]="{'text-primary': tab === 'profile'}" role="tab" aria-controls="profile" aria-selected="false" (click)="tab='profile'" style="font-size: medium;">Профиль</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="tab-content">
+        <div  [ngClass]="{'active': tab === 'activity', 'notactive': tab!='activity'}" id="activity" role="tabpanel" aria-labelledby="activity-tab" >
+          <div class="card">
+            <div class="card-body">
+              <div class="activity" *ngIf="activity">
+                <div class="card pb-3 m-0" *ngFor="let item of activity">
+                  <div class="d-flex align-items-start justify-content-start">
+                    <div class="header">
+                      <img src="{{item.img}}" width="48px" height="48px" style="border-radius: 24px">
+                    </div>
+                    <div class="pl-3">
+                      <span class="d-block pb-2">
+                        <small class="text-muted">
+                          <span style="font-size: medium; ">{{item.subtitle}}</span>
+                        </small>
+                        <span class="d-block" style="font-size: medium; padding-top: 2%">{{item.name}}</span>
+                      </span>
+                      <p style="font-size: small; ">{{item.actions}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div  [ngClass]="{'active': tab === 'about', 'notactive': tab!='about'}" id="about" role="tabpanel" aria-labelledby="about-tab">
+          <div class="card">
+
+                <p style="font-size: medium; padding-left: 5%; padding-top: 2%"><b>Обо мне</b></p>
+
+            <div class="card-body" style="font-size: small; padding-left: 5%;">
+              <div class="d-flex mb-2 justify-content-around">
+                <div class="w-50">
+                  <p class="d-block text-muted" >Телефон</p>
+                  <span>{{mainuser.phone}}</span>
+                </div>
+                <div class="w-50">
+                  <p class="d-block text-muted">Возраст</p>
+                  <span>{{mainuser.age}}</span>
+                </div>
+              </div>
+              <div class="d-flex mb-2 justify-content-around">
+                <div class="w-50">
+                  <p class="d-block text-muted">День рождения</p>
+                  <span>{{mainuser.bdate}}</span>
+                </div>
+                <div class="w-50">
+                  <p class="d-block text-muted">Страна</p>
+                  <span>Россия</span>
+                </div>
+              </div>
+              <div class="d-flex mb-2 justify-content-around">
+                <div class="w-50">
+                  <p class="d-block text-muted">Профессия</p>
+                  <span>{{mainuser.post}}</span>
+                </div>
+                <div class="w-50">
+                  <p class="d-block text-muted">Рабочий телефон</p>
+                  <span>451</span>
+                </div>
+              </div>
+              <div class="d-flex mb-2 justify-content-around">
+                <div class="w-50">
+                  <p class="d-block text-muted">Twitter</p>
+                  <span>{{mainuser.twitter}}</span>
+                </div>
+                <div class="w-50">
+                  <p class="d-block text-muted">Facebook</p>
+                  <span>{{mainuser.facebook}}</span>
+                </div>
+              </div>
+            </div>
+
+                <p style="font-size: medium; padding-left: 5%; padding-bottom: 0"><b>Быстрая биография</b></p>
+
+            <div class="card-body">
+              <p style="font-size: small; padding-left: 4%; ">{{mainuser.biography}}</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div [ngClass]="{'active': tab === 'friends', 'notactive': tab!='friends'}" id="friends" role="tabpanel" aria-labelledby="friends-tab">
+          <div class="card">
+            <div class="card-body">
+              <div class="row" *ngIf="contacts">
+                <div class="col-6" *ngFor="let contact of contacts">
+                  <a class="w-100 d-flex flex-row align-items-center nav-link">
+                    <img src="{{contact.img}}" width="48px" height="48px" style="border-radius: 24px">
+
+                    <span class="ml-3">
+                      <span class="d-block" style="font-size: medium; ">{{contact.name}}</span>
+                      <small class="text-muted">
+                        <span style="font-size: small;">{{contact.status}}</span>
+                      </small>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div  [ngClass]="{'active': tab === 'profile', 'notactive': tab!='profile'}" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="card">
+            <form class="">
+
+                  <p style="font-size: medium; padding-left: 5%; padding-bottom: 0"><b>Основная информация</b><p>
+
+              <div class="card-body" style="font-size: small; ">
+                <div class="row form-group">
+                  <label for="fname" class="text-right col-sm-3 col-form-label" style="font-weight: 400">Имя</label>
+                  <div class="col-sm-7">
+                    <input name="fname" id="fname" placeholder="First name" type="text" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                  <label for="lname" class="text-right col-sm-3 col-form-label" style="font-weight: 400">Фамилия</label>
+                  <div class="col-sm-7">
+                    <input name="lname" id="lname" placeholder="Last name" type="text" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                  <label for="email" class="text-right col-sm-3 col-form-label" style="font-weight: 400">Email</label>
+                  <div class="col-sm-7">
+                    <input name="email" id="email" placeholder="Email" type="email" class="form-control" ></div>
+                </div>
+                <div class="row form-group">
+                  <label for="phone" class="text-right col-sm-3 col-form-label" style="font-weight: 400">Номер телефона</label>
+                  <div class="col-sm-7">
+                    <input name="phone" id="phone" placeholder="Phone" type="text" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                  <label for="company" class="text-right col-sm-3 col-form-label" style="font-weight: 400">Место работы</label>
+                  <div class="col-sm-7">
+                    <input name="company" id="company" placeholder="Company" type="text" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                  <label for="company_site" class="text-right col-sm-3 col-form-label" style="font-weight: 400">Личный сайт</label>
+                  <div class="col-sm-7">
+                    <input name="compant_site" id="company_site" placeholder="Company website" type="text" class="form-control"></div>
+                </div>
+              </div>
+
+                  <p style="font-size: medium; padding-left: 5%; padding-bottom: 0"><b>Контактные данные</b></p>
+              <div class="card-body" style="font-size: small; ">
+                <div class="row form-group">
+                  <label for="address-line-1" class="text-right col-sm-3 col-form-label" style="font-weight: 400">Адрес</label>
+                  <div class="col-sm-7">
+                    <input name="address-line-1" id="address-line-1" placeholder="Address line 1" type="text" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                  <label for="city" class="text-right col-sm-3 col-form-label" style="font-weight: 400">Город</label>
+                  <div class="col-sm-7">
+                    <input name="city" id="city" placeholder="City" type="text" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                  <label for="city" class="text-right col-sm-3 col-form-label" style="font-weight: 400">Страна</label>
+                  <div class="col-sm-7">
+                    <input name="state" id="state" placeholder="State" type="text" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                  <label for="postcode" class="text-right col-sm-3 col-form-label" style="font-weight: 400">Почтовый индекс</label>
+                  <div class="col-sm-7">
+                    <input name="postcode" id="postcode" placeholder="Postcode" type="text" class="form-control"></div>
+                </div>
+              </div>
+              <div class="pt-1 pb-3">
+                <div class="row form-check">
+                  <div class="col-sm-9 offset-sm-3">
+                    <button class="btn btn-primary" style="font-size: medium">Сохранить</button>
+                    <span class="px-1"></span>
+                    <button class="btn btn-secondary" style="font-size: medium">Закрыть</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+	<!-- Профиль-боковушка !-->
+	<div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex">
+            <div class="w-50">
+              <h4 class="m-0">
+                <span class="fw-400" style="font-size: large">{{mainuser.name}}</span>
+              </h4>
+              <p style="font-size: x-small"></p>
+              <p class="my-2" style="font-size: small">{{mainuser.post}}</p>
+              <a  class="mt-0 d-block" style="font-size: small">{{mainuser.email}}</a>
+			  <a  class="mt-1 d-block" style="font-size: small">{{mainuser.phone}}</a>
+              <a  class="mt-1 d-block" style="font-size: small"></a>
+            </div>
+            <div class="w-50 text-center">
+              <app-avatar src="{{mainuser.img}}" size="128" name="Gerald Morris"></app-avatar>
+              <div class="m-1 text-center">
+
+              </div>
+            </div>
+          </div>
+        </div>
+            <p style="font-size: medium; padding-left: 5%; padding-bottom: 0"><b>Статистика</b></p>
+        <div class="card-body" style="padding-top: 0">
+          <div class="text-center row">
+            <div class="col">
+              <h2 class="m-0">
+                <b>{{mainuser.int1}}</b>
+              </h2>
+              <small>Подписчики</small>
+            </div>
+            <div class="col">
+              <h2 class="m-0">
+                <b>{{mainuser.int2}}</b>
+              </h2>
+              <small>Подписки</small>
+            </div>
+            <div class="col">
+              <h2 class="m-0">
+                <b>37</b>
+              </h2>
+              <small>Публикаций</small>
+            </div>
+          </div>
+        </div>
+
+
+            <p style="font-size: medium; padding-left: 5%; padding-bottom: 0"><b>Обо мне</b></p>
+
+          <p style="font-size: small; padding-left: 5%; padding-top: 0">{{mainuser.publication}}</p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
