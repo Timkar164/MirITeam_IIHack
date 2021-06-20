@@ -26,7 +26,10 @@ export class YourmetrikComponent implements OnInit {
     this.service.get_metrik(1).subscribe(value => {
 
       this.data=value;
-      this.chart.chart.data.datasets[0].data = [this.data.items.M1, this.data.items.M2, this.data.items.M3, this.data.items.M4, this.data.items.m5, this.data.items.M6, this.data.items.M7];
+      console.log(value);
+      console.log(this.chart.chart);
+      this.chart.chart.data.datasets[0].data = this.data.met;
+      this.chart.chart.data.labels=this.data.name;
       this.chart.chart.update();
     })
   }

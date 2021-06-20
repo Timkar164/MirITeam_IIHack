@@ -28,8 +28,10 @@ export class CommandmetrikComponent implements OnInit {
     this.sirvece.get_team(1).subscribe(value => {
 
       this.dara=value;
-      this.teammetr=this.dara.items.team;
-      this.metrik=this.dara.items.metr;
+      console.log(this.dara);
+      this.teammetr=this.dara.items;
+      console.log(this.teammetr);
+
       for (let i=0; i< this.teammetr.length; i++){
          let metsum = 0;
          metsum=this.teammetr[i].M1+this.teammetr[i].M2+this.teammetr[i].M3+this.teammetr[i].M4+this.teammetr[i].M5+this.teammetr[i].M6+this.teammetr[i].M7;
