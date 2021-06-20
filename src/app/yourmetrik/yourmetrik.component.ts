@@ -29,7 +29,7 @@ export class YourmetrikComponent implements OnInit {
       console.log(value);
       console.log(this.chart.chart);
       this.chart.chart.data.datasets[0].data = this.data.met;
-      this.chart.chart.data.labels=this.data.name;
+      this.chart.chart.data.labels = this.data.name;
       this.chart.chart.update();
     })
   }
