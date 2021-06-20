@@ -29,6 +29,8 @@ export class MetricsComponent implements OnInit {
     this.isPlay=false;
     const frmData = new FormData();
     console.log(frmData);
+    this.isFile = true;
+    this.isPlay = true;
     for (var i = 0; i < this.myFiles.length; i++) {
       frmData.append("fileUpload", this.myFiles[i]);
     }
