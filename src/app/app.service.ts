@@ -82,6 +82,15 @@ export class AppService {
     return userar;
   }
 
+  get_program(){
+    const  userar = this.http.get('https://flask-api-miriteam.herokuapp.com/getprogram');
+    return userar;
+  }
+
+  set_program(taks){
+    const  userar = this.http.get('https://flask-api-miriteam.herokuapp.com/settaks?taks='+taks);
+    return userar;
+  }
 
 
 

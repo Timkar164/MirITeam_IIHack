@@ -8,6 +8,14 @@
 
   <ng-container>
     <input type="file" id="file" multiple (change)="getFileDetails($event)">
+    <p> Выбирите таксономию</p>
+
+    <button (click)="changetaks(1)">AR</button>
+    <button (click)="changetaks(2)">Аналитик данных</button>
+    <button (click)="changetaks(3)">Распределённые системы</button>
+    <button (click)="changetaks(4)">Геймдизайнер</button>
+    <button (click)="changetaks(5)">Образовательный дата-инженер</button>
+    <p></p>
     <button (click)="uploadFiles()">Upload</button>
   </ng-container>
 </div>
@@ -17,7 +25,7 @@
   <ul class="nav nav-tabs">
 
     <li class="nav-item">
-      <a class="nav-link" href="metriks/cmetrik">Оценка соответствия РПД</a>
+      <a class="nav-link" href="metriks/cmetrik">Оценка соответствия образовательной программы</a>
     </li>
 
   </ul>
@@ -36,6 +44,6 @@
       <div id="circularG_7" class="circularG"></div>
       <div id="circularG_8" class="circularG"></div>
     </div>
-  
+
 </div>
 

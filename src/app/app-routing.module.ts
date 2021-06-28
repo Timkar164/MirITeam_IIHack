@@ -28,8 +28,8 @@ import {CommandmetrikComponent} from "./commandmetrik/commandmetrik.component";
 
 const metrikroutes: Routes = [
   {path:'ymetrik', component: CommandmetrikComponent},
-  {path:'', component: YourmetrikComponent},
-  {path:'cmetrik', component: YourmetrikComponent}
+  {path:'', component: CommandmetrikComponent},
+  {path:'cmetrik', component: CommandmetrikComponent}
 ];
 
 

@@ -25,20 +25,13 @@ export class CommandmetrikComponent implements OnInit {
 
   ngOnInit() {
 
-    this.sirvece.get_team(1).subscribe(value => {
 
-      this.dara=value;
-      console.log(this.dara);
-      this.teammetr=this.dara.items;
-      console.log(this.teammetr);
-
-      for (let i=0; i< this.teammetr.length; i++){
-         let metsum = 0;
-         metsum=this.teammetr[i].M1+this.teammetr[i].M2+this.teammetr[i].M3+this.teammetr[i].M4+this.teammetr[i].M5+this.teammetr[i].M6+this.teammetr[i].M7;
-        this.chart.chart.data.datasets[0].data[i]=metsum/7;
-        this.chart.chart.update();
-      }
-    })
+    this.sirvece.get_program().subscribe(value => {
+      console.log(value);
+      this.metrik = value;
+      this.metrik=this.metrik.response;
+      console.log(this.metrik);
+    });
 
   }
   mych(){

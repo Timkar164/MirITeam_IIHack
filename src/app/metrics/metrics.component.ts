@@ -29,17 +29,15 @@ export class MetricsComponent implements OnInit {
     this.isPlay=false;
     const frmData = new FormData();
     console.log(frmData);
-    this.isFile = true;
-    this.isPlay = true;
+
     for (var i = 0; i < this.myFiles.length; i++) {
       frmData.append("fileUpload", this.myFiles[i]);
     }
 
     this.httpService.post('https://flask-api-miriteam.herokuapp.com/files', frmData).subscribe(
-      data => {
+      value => {
         // SHOW A MESSAGE RECEIVED FROM THE WEB API.
-        this.sMsg = data as string;
-        console.log (this.sMsg);
+        console.log(value);
         this.isFile = true;
         this.isPlay = true;
       },
@@ -52,6 +50,11 @@ export class MetricsComponent implements OnInit {
     this.fileToUpload = files.item(0);
     console.log(this.fileToUpload);
     this.isFile=true;
+  }
+  changetaks(taks){
+    this.httpService.get('https://flask-api-miriteam.herokuapp.com/settaks?taks='+taks).subscribe(value => {
+      console.log(value);
+    })
   }
 
 
